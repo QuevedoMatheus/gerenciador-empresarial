@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Colaborador {
 	
-	private Long ID;
+	private Long id;
 	private String nome;
 	private Date nascimento;
 	private String mae;
@@ -31,20 +31,20 @@ public class Colaborador {
 		
 	}
 
-	public Colaborador(Long ID, String nome, Date nascimento, String mae, String pai, String endereco, String rG, String cPF,
-			String nIS, String cBO, String funcao, Date admissao, float salario, Boolean cestaBasica, float transporte,
+	public Colaborador(Long id, String nome, Date nascimento, String mae, String pai, String endereco, String RG, String CPF,
+			String NIS, String CBO, String funcao, Date admissao, float salario, Boolean cestaBasica, float transporte,
 			float salarioBase, float salarioBruto, float salarioLiquido, Boolean demissao, Date dataAdmissao,
 			String motivoDemissao) {
-		this.ID = ID;
+		this.id = id;
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.mae = mae;
 		this.pai = pai;
 		this.endereco = endereco;
-		RG = rG;
-		CPF = cPF;
-		NIS = nIS;
-		CBO = cBO;
+		this.RG = RG;
+		this.CPF = CPF;
+		this.NIS = NIS;
+		this.CBO = CBO;
 		this.funcao = funcao;
 		this.admissao = admissao;
 		this.salario = salario;
@@ -102,32 +102,32 @@ public class Colaborador {
 		return RG;
 	}
 
-	public void setRG(String rG) {
-		RG = rG;
+	public void setRG(String RG) {
+		this.RG = RG;
 	}
 
 	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 
 	public String getNIS() {
 		return NIS;
 	}
 
-	public void setNIS(String nIS) {
-		NIS = nIS;
+	public void setNIS(String NIS) {
+		this.NIS = NIS;
 	}
 
 	public String getCBO() {
 		return CBO;
 	}
 
-	public void setCBO(String cBO) {
-		CBO = cBO;
+	public void setCBO(String CBO) {
+		this.CBO = CBO;
 	}
 
 	public String getFuncao() {
@@ -218,17 +218,17 @@ public class Colaborador {
 		this.motivoDemissao = motivoDemissao;
 	}
 
-	public Long getID() {
-		return ID;
+	public Long getid() {
+		return id;
 	}
 
-	public void setID(Long iD) {
-		ID = iD;
+	public void setid(Long iD) {
+		id = iD;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -240,7 +240,7 @@ public class Colaborador {
 		if (getClass() != obj.getClass())
 			return false;
 		Colaborador other = (Colaborador) obj;
-		return Objects.equals(ID, other.ID);
+		return Objects.equals(id, other.id);
 	}
 	
 	
