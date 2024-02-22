@@ -44,16 +44,16 @@ public class CadastroSaidas {
 		return CNPJ;
 	}
 
-	public void setCNPJ(String cNPJ) {
-		CNPJ = cNPJ;
+	public void setCNPJ(String CNPJ) {
+		this.CNPJ = CNPJ;
 	}
 
 	public Integer getNF() {
 		return NF;
 	}
 
-	public void setNF(Integer nF) {
-		NF = nF;
+	public void setNF(Integer NF) {
+		this.NF = NF;
 	}
 
 	public String getDescricao() {

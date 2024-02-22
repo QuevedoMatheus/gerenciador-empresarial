@@ -6,14 +6,14 @@ import com.gerenciador.entities.enums.FormaPagamento;
 
 public class Fornecedor {
 	
-	private Long ID;
+	private Long id;
 	private String razaoSocial;
-	private String endereço;
+	private String endereco;
 	private String telefoneComercial;
 	private String emailFinanceiro;
 	private String emailComercial;
 	private String CNPJ;
-	private String InscricaoEstadual;
+	private String inscricaoEstadual;
 	private String CEIObra;
 	private FormaPagamento pagamento;
 	private String dadosBancarios;
@@ -22,28 +22,28 @@ public class Fornecedor {
 		
 	}
 
-	public Fornecedor(Long iD, String razaoSocial, String endereço, String telefoneComercial, String emailFinanceiro,
-			String emailComercial, String cNPJ, String inscricaoEstadual, String cEIObra, FormaPagamento pagamento,
+	public Fornecedor(Long id, String razaoSocial, String endereco, String telefoneComercial, String emailFinanceiro,
+			String emailComercial, String CNPJ, String inscricaoEstadual, String CEIObra, FormaPagamento pagamento,
 			String dadosBancarios) {
-		ID = iD;
+		this.id = id;
 		this.razaoSocial = razaoSocial;
-		this.endereço = endereço;
+		this.endereco = endereco;
 		this.telefoneComercial = telefoneComercial;
 		this.emailFinanceiro = emailFinanceiro;
 		this.emailComercial = emailComercial;
-		CNPJ = cNPJ;
-		InscricaoEstadual = inscricaoEstadual;
-		CEIObra = cEIObra;
+		this.CNPJ = CNPJ;
+		this.inscricaoEstadual = inscricaoEstadual;
+		this.CEIObra = CEIObra;
 		this.pagamento = pagamento;
 		this.dadosBancarios = dadosBancarios;
 	}
 
-	public Long getID() {
-		return ID;
+	public Long getid() {
+		return id;
 	}
 
-	public void setID(Long iD) {
-		ID = iD;
+	public void setid(Long id) {
+		this.id = id;
 	}
 
 	public String getRazaoSocial() {
@@ -55,11 +55,11 @@ public class Fornecedor {
 	}
 
 	public String getEndereço() {
-		return endereço;
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereço(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getTelefoneComercial() {
@@ -90,24 +90,24 @@ public class Fornecedor {
 		return CNPJ;
 	}
 
-	public void setCNPJ(String cNPJ) {
-		CNPJ = cNPJ;
+	public void setCNPJ(String CNPJ) {
+		this.CNPJ = CNPJ;
 	}
 
 	public String getInscricaoEstadual() {
-		return InscricaoEstadual;
+		return inscricaoEstadual;
 	}
 
 	public void setInscricaoEstadual(String inscricaoEstadual) {
-		InscricaoEstadual = inscricaoEstadual;
+		this.inscricaoEstadual = inscricaoEstadual;
 	}
 
 	public String getCEIObra() {
 		return CEIObra;
 	}
 
-	public void setCEIObra(String cEIObra) {
-		CEIObra = cEIObra;
+	public void setCEIObra(String CEIObra) {
+		this.CEIObra = CEIObra;
 	}
 
 	public FormaPagamento getPagamento() {
@@ -128,7 +128,7 @@ public class Fornecedor {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -140,7 +140,7 @@ public class Fornecedor {
 		if (getClass() != obj.getClass())
 			return false;
 		Fornecedor other = (Fornecedor) obj;
-		return Objects.equals(ID, other.ID);
+		return Objects.equals(id, other.id);
 	}
 	
 	

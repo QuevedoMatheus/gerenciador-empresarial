@@ -222,8 +222,8 @@ public class Colaborador {
 		return id;
 	}
 
-	public void setid(Long iD) {
-		id = iD;
+	public void setid(Long id) {
+		this.id = id;
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import com.gerenciador.entities.enums.FormaPagamento;
 
 public class Cliente {
 
-	private String id;
+	private Long id;
 	private String razaoSocial;
 	private String enderenco;
 	private String telefone;
@@ -19,7 +19,7 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String id, String razaoSocial, String enderenco, String telefone, String emailfinanceiro,
+	public Cliente(Long id, String razaoSocial, String enderenco, String telefone, String emailfinanceiro,
 			String cnpj, FormaPagamento pagamento, String dadosBancarios) {
 		this.id = id;
 		this.razaoSocial = razaoSocial;
@@ -31,11 +31,11 @@ public class Cliente {
 		this.dadosBancarios = dadosBancarios;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
