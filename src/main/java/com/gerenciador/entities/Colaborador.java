@@ -1,22 +1,45 @@
 package com.gerenciador.entities;
 
-import java.util.Date;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Colaborador {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name= "tb_colaborador")
+public class Colaborador implements Serializable {
 	
+	private static final long serialVersionUID =1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String nome;
-	private Date nascimento;
+	private Integer nascimento;
 	private String mae;
 	private String pai;
+	
+	@Column(columnDefinition = "TEXT")
 	private String endereco;
+	
+	@Column(unique = true)
 	private String RG;
+	
+	@Column(unique = true)
 	private String CPF;
+	
+	@Column(unique = true)
 	private String NIS;
+	
 	private String CBO;
 	private String funcao;
-	private Date admissao;
+	private Integer admissao;
 	private float salario;
 	private Boolean cestaBasica;
 	private float transporte;
@@ -24,16 +47,18 @@ public class Colaborador {
 	private float salarioBruto;
 	private float salarioLiquido;
 	private Boolean demissao;
-	private Date dataAdmissao;
+	private Integer dataAdmissao;
+	
+	@Column(columnDefinition = "TEXT")
 	private String motivoDemissao;
 	
 	public Colaborador() {
 		
 	}
 
-	public Colaborador(Long id, String nome, Date nascimento, String mae, String pai, String endereco, String RG, String CPF,
-			String NIS, String CBO, String funcao, Date admissao, float salario, Boolean cestaBasica, float transporte,
-			float salarioBase, float salarioBruto, float salarioLiquido, Boolean demissao, Date dataAdmissao,
+	public Colaborador(Long id, String nome, Integer nascimento, String mae, String pai, String endereco, String RG, String CPF,
+			String NIS, String CBO, String funcao, Integer admissao, float salario, Boolean cestaBasica, float transporte,
+			float salarioBase, float salarioBruto, float salarioLiquido, Boolean demissao, Integer dataAdmissao,
 			String motivoDemissao) {
 		this.id = id;
 		this.nome = nome;
@@ -66,11 +91,11 @@ public class Colaborador {
 		this.nome = nome;
 	}
 
-	public Date getNascimento() {
+	public Integer getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(Integer nascimento) {
 		this.nascimento = nascimento;
 	}
 
@@ -138,11 +163,11 @@ public class Colaborador {
 		this.funcao = funcao;
 	}
 
-	public Date getAdmissao() {
+	public Integer getAdmissao() {
 		return admissao;
 	}
 
-	public void setAdmissao(Date admissao) {
+	public void setAdmissao(Integer admissao) {
 		this.admissao = admissao;
 	}
 
@@ -202,11 +227,11 @@ public class Colaborador {
 		this.demissao = demissao;
 	}
 
-	public Date getDataAdmissao() {
+	public Integer getDataAdmissao() {
 		return dataAdmissao;
 	}
 
-	public void setDataAdmissao(Date dataAdmissao) {
+	public void setDataAdmissao(Integer dataAdmissao) {
 		this.dataAdmissao = dataAdmissao;
 	}
 

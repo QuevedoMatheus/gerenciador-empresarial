@@ -1,19 +1,36 @@
 package com.gerenciador.entities;
 
-import java.util.Date;
+import java.io.Serializable;
 import java.util.Objects;
 
 import com.gerenciador.entities.enums.FormaPagamento;
 
-public class CadastroSaidas {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name= "tb_cadastrosaidas")
+public class CadastroSaidas implements Serializable {
+	
+	private static final long serialVersionUID =1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(unique = true)
 	private String CNPJ;
 	private Integer NF;
+	
+	@Column(columnDefinition = "TEXT")
 	private String descricao;
 	private FormaPagamento pagamento;
 	private Integer numeroParcelas;
-	private Date vencimento;
+	private Integer vencimento;
 	private String centroCusto;
 	
 	public CadastroSaidas() {
@@ -21,7 +38,7 @@ public class CadastroSaidas {
 	}
 
 	public CadastroSaidas(Long id, String CNPJ, Integer NF, String descricao, FormaPagamento pagamento,
-			Integer numeroParcelas, Date vencimento, String centroCusto) {
+			Integer numeroParcelas, Integer vencimento, String centroCusto) {
 		this.id = id;
 		this.CNPJ = CNPJ;
 		this.NF = NF;
@@ -80,11 +97,11 @@ public class CadastroSaidas {
 		this.numeroParcelas = numeroParcelas;
 	}
 
-	public Date getVencimento() {
+	public Integer getVencimento() {
 		return vencimento;
 	}
 
-	public void setVencimento(Date vencimento) {
+	public void setVencimento(Integer vencimento) {
 		this.vencimento = vencimento;
 	}
 

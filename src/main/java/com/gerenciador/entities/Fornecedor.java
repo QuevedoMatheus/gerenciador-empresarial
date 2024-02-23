@@ -1,21 +1,43 @@
 package com.gerenciador.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import com.gerenciador.entities.enums.FormaPagamento;
 
-public class Fornecedor {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name= "tb_fornecedor")
+public class Fornecedor implements Serializable {
 	
+	private static final long serialVersionUID =1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String razaoSocial;
+	
+	@Column(columnDefinition = "TEXT")
 	private String endereco;
 	private String telefoneComercial;
 	private String emailFinanceiro;
 	private String emailComercial;
+	
+	@Column(unique = true)
 	private String CNPJ;
+	
 	private String inscricaoEstadual;
 	private String CEIObra;
 	private FormaPagamento pagamento;
+	
+	@Column(columnDefinition = "TEXT")
 	private String dadosBancarios;
 	
 	public Fornecedor() {

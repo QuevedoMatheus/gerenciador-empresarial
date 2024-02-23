@@ -1,18 +1,41 @@
 package com.gerenciador.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import com.gerenciador.entities.enums.FormaPagamento;
 
-public class Cliente {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name= "tb_cliente")
+public class Cliente implements Serializable {
+
+	private static final long serialVersionUID =1L; 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(columnDefinition = "TEXT")
 	private String razaoSocial;
+
+	@Column(columnDefinition = "TEXT")
 	private String enderenco;
 	private String telefone;
 	private String emailfinanceiro;
+	
+	@Column(unique = true)
 	private String cnpj;
+	
 	private FormaPagamento pagamento;
+	@Column(columnDefinition = "TEXT")
+	
 	private String dadosBancarios;
 	
 	public Cliente() {
@@ -111,8 +134,7 @@ public class Cliente {
 		Cliente other = (Cliente) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
+
 	
 	
 }
