@@ -34,8 +34,8 @@ public class Cliente implements Serializable {
 	private String cnpj;
 	
 	private FormaPagamento pagamento;
-	@Column(columnDefinition = "TEXT")
 	
+	@Column(columnDefinition = "TEXT")
 	private String dadosBancarios;
 	
 	public Cliente() {
